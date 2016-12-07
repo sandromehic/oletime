@@ -1,5 +1,7 @@
 # Oletime
 
+[![Build Status](https://travis-ci.org/sandromehic/oletime.svg?branch=master)](https://travis-ci.org/sandromehic/oletime)
+
 Just a simple gem to convert ruby Time objects to OLE float datetime and viceversa.
 
 ## Installation
