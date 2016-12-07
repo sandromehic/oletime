@@ -16,5 +16,9 @@ module Oletime
     def to_ole
       (@time.to_f / 86400) + 25569
     end
+
+    def to_s
+      @time.to_s
+    end
   end
 end

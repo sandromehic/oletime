@@ -1,8 +1,6 @@
 # Oletime
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/oletime`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Just a simple gem to convert ruby Time objects to OLE float datetime and viceversa.
 
 ## Installation
 
@@ -22,17 +20,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Actual Time initialize method is used for `time` attribute, so you can pass just the year or all the way to seconds with fractions and utc offset to the initializer.
+
+```ruby
+time = Oletime::Time.new(2016,10,25)
+time = Oletime::Time.new(2016,10,25,12,51,34)
+time = Oletime::Time.new(2016,10,25,12,51,34,"+02:00")
+```
+
+Use `from_ole` to create a new `OleTime::Time` object:
+
+```ruby
+time = Oletime::Time.from_ole(42668.535811609)
+# => #<Oletime::Time:0x0055de187e76f0 @time=2016-10-25 12:51:34 UTC>
+```
+
+Use `to_ole` to get float value of the Time object
+
+```ruby
+time = Oletime::Time.new(2016,10,25,12,51,34,"+02:00")
+time.to_ole
+# => 42668.45247685185
+```
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/oletime.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sandromehic/oletime.
 
 
 ## License
