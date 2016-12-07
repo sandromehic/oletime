@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Convert between OLE time and UNIX timestamp}
   spec.description   = %q{Gem used for conversion of tim from OLE float datetime to UNIX timestamp and viceversa}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/sandromehic/oletime"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
