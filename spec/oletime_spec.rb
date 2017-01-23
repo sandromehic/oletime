@@ -1,18 +1,23 @@
 require 'spec_helper'
 
 describe Oletime do
+  let(:oletime_new) { Oletime::Time.new }
   let(:oletime) { Oletime::Time.new(2016, 10, 25, 12, 51, 34.123, '+00:00') }
   let(:real_time) { Time.new(2016, 10, 25, 12, 51, 34.123, '+00:00') }
-  let(:unix_time) { 147_739_989_4.123 }
-  let(:ole_time_float) { 426_68.535811609 }
-  let(:ole_time_ms) { 426_68.535811608795 }
+  let(:unix_time) { 1_477_399_894.123 }
+  let(:ole_time_float) { 42_668.535811609 }
+  let(:ole_time_ms) { 42_668.535811608795 }
 
   it 'has a version number' do
     expect(Oletime::VERSION).not_to be nil
   end
 
-  it 'instantites correctly current time' do
+  it 'instantites correctly some time value' do
     expect(oletime.time).to eq(real_time)
+  end
+
+  it 'instantites correctly current time' do
+    expect(oletime_new.time).to be_truthy
   end
 
   it 'creates from OLE time correctly' do
